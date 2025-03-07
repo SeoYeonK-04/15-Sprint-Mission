@@ -42,6 +42,15 @@ header {
   margin: 0 12.2rem 4rem 12.2rem;
 }
 
+header a {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 39.6rem;
+  height: 13.2rem;
+}
+
 .auth-form {
  display: flex;
  flex-direction: column;
@@ -67,7 +76,7 @@ input{
   padding: 1.6rem 2.4rem;
 }
 
-button {
+.button-submit {
   width: 64rem;
   height: 5.6rem;
 
@@ -103,9 +112,10 @@ footer{
   align-items: center;
 }
 
-.eye_icon {
+.button-eye {
   position: absolute;
   right: 1.6rem;
+  border: none;
 }
 
 .social-login {
