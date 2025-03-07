@@ -40,7 +40,7 @@ header {
 }
 
 .login:hover {
-  background-color: var(--hover-botton);
+  background-color: var(--hover-button);
 }
 
 /* Main - Header */
@@ -98,7 +98,7 @@ header {
 }
 
 .explore-button:hover {
-  background-color: var(--hover-botton);
+  background-color: var(--hover-button);
 }
 
 /* Main-Body */
@@ -216,8 +216,6 @@ footer {
 .sns-link {
   display: flex;
   gap: 1.2rem;
-
-  list-style-type: none;
 }
 
 .footer-menu, .sns-link a, .logo, .login, .explore-button {

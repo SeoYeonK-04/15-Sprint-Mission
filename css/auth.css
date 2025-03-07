@@ -128,12 +128,9 @@ footer{
   font-weight: 50rem;
 }
 
-.social-media {
+.social-media ul {
   display: flex;
-  justify-content: space-between;
-
-  width: 10rem;
-  height: 4.2rem;
+  gap: 1.6rem;
 }
 
 .sign_up {
