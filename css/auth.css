@@ -42,7 +42,7 @@ header {
   margin: 0 12.2rem 4rem 12.2rem;
 }
 
-form {
+.auth-form {
  display: flex;
  flex-direction: column;
  gap: 2.4rem;

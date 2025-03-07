@@ -23,14 +23,12 @@
     <header>
       <a href="/">
         <img class="logo" src="/image/logo.svg" alt="판다마켓 로고" />
-      </a>
-      <a class="logo-title" href="/">
         <img src="/image/logo_title.svg" alt="판다마켓 로고 글씨" />
       </a>
     </header>
 
     <main>
-      <form>
+      <form class="auth-form">
         <div class="input-box">
           <label for="email">이메일</label>
           <input name="email" id="email" type="email" />
@@ -40,15 +38,17 @@
           <label for="password">비밀번호</label>
           <div class="pw-content">
             <input name="password" id="password" type="password" />
-            <img
-              class="eye_icon"
-              src="/image/password_toggle_icon.svg"
-              alt="비밀번호를 보이지 않게 하는 눈 아이콘"
-            />
+            <button type="button">
+              <img
+                class="eye_icon"
+                src="/image/password_toggle_icon.svg"
+                alt="비밀번호를 보이지 않게 하는 눈 아이콘"
+              />
+            </button>
           </div>
         </div>
 
-        <button>로그인</button>
+        <button type="submit">로그인</button>
       </form>
     </main>
 
