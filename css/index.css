@@ -356,4 +356,17 @@ footer {
  .footer-content {
   width: 53.6rem;
  }
+
+ @media (max-width: 76.7rem) {
+  /* Banner */
+  .banner-content {
+    padding: 0.95rem 1.6rem;
+  }
+  
+  .logo {
+    display: none;
+  }
+
+  
+ }
 }
