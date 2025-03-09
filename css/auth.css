@@ -7,7 +7,7 @@ html {
   height: 100%;
 }
 
-.body_login {
+.body-login {
   margin-top: 20rem;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ html {
   height: 61.8rem;
 }
 
-.body_signup {
+.body-signup {
   margin-top: 40rem;
   display: flex;
   flex-direction: column;
@@ -140,7 +140,7 @@ footer{
 
 .social-login span {
   font-size: 1.6rem;
-  font-weight: 50rem;
+  font-weight: 500;
 }
 
 .social-media ul {
@@ -150,9 +150,26 @@ footer{
 
 .sign_up {
   font-size: 1.4rem;
-  font-weight: 50rem;
+  font-weight: 500;
 }
 
 .sign_up a {
   color: var(--blue);
+}
+
+@media (max-width: 76.7rem) {
+  .body-login {
+    margin-top: 40rem;
+  }
+
+  .body-login, .body-signup, input, .button-submit, .social-login {
+    max-width: 40rem;
+  }
+
+  header {
+    width: 19.8rem;
+    height: 6.6rem;
+    margin: 0 7.2rem 2.4rem 7.2rem;
+    gap: 2rem;
+  }
 }

@@ -275,10 +275,10 @@ footer {
     cursor: pointer;
 }
 
-@media (max-width: 119.9rem) {
+@media (max-width: 1199px) {
   /* Banner */
   .banner-content {
-    padding: 0.95rem 20rem;
+    padding: 0.95rem 2.4rem;
   }  
 
   /* Main - Header */
@@ -357,18 +357,19 @@ footer {
   width: 53.6rem;
  }
 
- @media (max-width: 76.7rem) {
-  .banner-content {
-    padding: 0.95rem 1.6rem;
-  }
-  
-  .logo {
-    display: none;
+ @media (max-width: 767px) {
+  html,
+  body{
+  width:100%;
+  overflow-x:hidden;
   }
 
-  /* Main-Header */
-  .header-text {
-    width: 30rem;
+  html {
+    font-size: 5px;
+  }
+
+  .logo {
+    display: none;
   }
 
   .header-title {
@@ -380,8 +381,21 @@ footer {
   .header-title span {
     display: block;
   }
+  
+  .footer-content {
+    position: relative;
+  }
 
-  /* Footer */
-    
+  .copyright {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+  }
+  
+  .sns-link img {
+    width: 20px;
+  }
+
  }
 }
