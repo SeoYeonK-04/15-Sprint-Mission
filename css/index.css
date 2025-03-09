@@ -1,26 +1,42 @@
-
 body {
   margin: 0;
 }
 
-header {
+/* Banner */
+.banner {
   position: sticky;
   top: 0;
   background-color: var(--white);
 }
 
-/* Banner */
-.banner_button {
-  margin: 0.95rem auto;
-  width:100%;
-  padding: 0 20rem;
+.banner-content {
+  height: 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  padding: 0.95rem 40rem;
 }
 
-.logo img {
-  width: 15.3rem;
+.logo-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.9rem;
+}
+
+.logo-text {
+  width: 10.3rem;
+}
+
+.logo {
+  width: 4rem;
+}
+
+.logo img,
+.logo-text img {
+  max-width: 100%;
+  height: auto;
 }
 
 .login {
@@ -76,8 +92,12 @@ header {
 .header-title {
   font-size: 4rem;
   font-weight: 7rem;
-  line-height: 5.6rem;
+  line-height: 140%;
   color: var(--gray700);
+}
+
+.header-title span {
+  display: block;
 }
 
 .explore-button {
@@ -123,16 +143,19 @@ header {
   justify-content: space-around;
 
   width: 98.8rem;
-  height: 44.4rem;
+}
+
+.content-section:nth-of-type(2) .content-card {
+  flex-direction: row-reverse;
+}
+
+.content-section:nth-of-type(2) .content-card .content-text {
+  text-align: right;
 }
 
 .content-text {
   width: 35.9rem;
   height: 23.8rem;
-}
-
-.content-text-right {
-  text-align: right;
 }
 
 .content-card img {
@@ -150,6 +173,10 @@ header {
   font-size: 4rem;
   font-weight: 70rem;
   color: var(--gray700);
+}
+
+.content-title span {
+  display: block;
 }
 
 .content-description {
@@ -202,14 +229,14 @@ footer {
   font-size: 1.6rem;
 }
 
-.footer-menu {
-  text-decoration: none;
-  color: var(--gray200);
-}
-
 .footer-content {
   display: flex;
   gap: 3rem;
+  color: var(--gray200);
+}
+
+.footer-menu {
+  text-decoration: none;
   color: var(--gray200);
 }
 
@@ -220,4 +247,35 @@ footer {
 
 .footer-menu, .sns-link a, .logo, .login, .explore-button {
     cursor: pointer;
+}
+
+@media (max-width: 119.9rem) {
+  /* Banner */
+  .banner-content {
+    padding: 0.95rem 20rem;
+  }  
+
+  /* Main - Header */
+  .header-container {
+    height: 77.1rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 11rem;
+  }
+
+  .header-text {
+    width: 53rem;
+  }
+
+  .header-title span {
+    display: inline;
+  }
+
+  .explore-button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
 }
