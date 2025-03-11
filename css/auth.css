@@ -1,25 +1,3 @@
-* {
-  box-sizing: border-box;
-  font-family: "Pretendard", sans-serif;
-}
-
-:root {
-  --gray900: #111827;
-  --gray800: #1f2947;
-  --gray700: #374151;
-  --gray600: #4b5563;
-  --gray500: #6b7280;
-  --gray400: #9ca3af;
-  --gray200: #e5e7eb;
-  --gray100: #f3f4f6;
-  --gray50: #f9fafb;
-  --blue: #3692ff;
-  --hover-botton: #1967D6;
-  --white: #ffffff;
-  --background: #CFE5FF;
-  --skyblue: #e6f2ff;
-}
-
 html {
   font-size: 10px;
   display: flex;
@@ -29,7 +7,7 @@ html {
   height: 100%;
 }
 
-.body_login {
+.body-login {
   margin-top: 20rem;
   display: flex;
   flex-direction: column;
@@ -40,7 +18,7 @@ html {
   height: 61.8rem;
 }
 
-.body_signup {
+.body-signup {
   margin-top: 40rem;
   display: flex;
   flex-direction: column;
@@ -64,7 +42,16 @@ header {
   margin: 0 12.2rem 4rem 12.2rem;
 }
 
-form {
+header a {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 39.6rem;
+  height: 13.2rem;
+}
+
+.auth-form {
  display: flex;
  flex-direction: column;
  gap: 2.4rem;
@@ -75,7 +62,7 @@ label {
   font-weight: 700;
 }
 
-input{
+input{ 
   width: 64rem;
   height: 5.6rem;
 
@@ -89,18 +76,23 @@ input{
   padding: 1.6rem 2.4rem;
 }
 
-button {
+.button-submit {
   width: 64rem;
   height: 5.6rem;
 
-  background-color: var(--blue);
+  background-color: var(--gray400);
   color: var(--white);
 
   font-size: 2rem;
   font-weight: 60rem;
 
-  border: 2px solid var(--blue);
+  border: 2px solid var(--gray400);
   border-radius: 4rem;
+}
+
+.button-submit:hover {
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
 }
 
 footer{
@@ -125,9 +117,10 @@ footer{
   align-items: center;
 }
 
-.eye_icon {
+.button-eye {
   position: absolute;
   right: 1.6rem;
+  border: none;
 }
 
 .social-login {
@@ -147,22 +140,54 @@ footer{
 
 .social-login span {
   font-size: 1.6rem;
-  font-weight: 50rem;
+  font-weight: 500;
 }
 
-.social-media {
+.social-media ul {
   display: flex;
-  justify-content: space-between;
-
-  width: 10rem;
-  height: 4.2rem;
+  gap: 1.6rem;
 }
 
 .sign_up {
   font-size: 1.4rem;
-  font-weight: 50rem;
+  font-weight: 500;
 }
 
 .sign_up a {
   color: var(--blue);
+}
+
+@media (max-width: 76.7rem) {
+  /* body {
+    margin-top: 20rem;
+  } */
+
+  header {
+    margin: 0;
+  }
+
+  header a {
+    width: 19.8rem;
+    height: 6.6rem;
+  }
+
+  .logo {
+    width: 5.1rem;
+    height: 5.1rem;
+  }
+
+  .logo-title {
+    width: 13.3rem;
+    height: 4.5rem;
+  }
+
+  .body-login, .body-signup, input, .button-submit, .social-login {
+    max-width: 40rem;
+    width: 100%;
+  }
+
+  main, footer {
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
 }

@@ -15,39 +15,40 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
+    <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/auth.css" />
   </head>
 
-  <body class="body_login">
+  <body class="body-login">
     <header>
       <a href="/">
         <img class="logo" src="/image/logo.svg" alt="판다마켓 로고" />
-      </a>
-      <a class="logo-title" href="/">
-        <img src="/image/logo_title.svg" alt="판다마켓 로고 글씨" />
+        <img class="logo-title" src="/image/logo_title.svg" alt="판다마켓 로고 글씨" />
       </a>
     </header>
 
     <main>
-      <form>
+      <form class="auth-form">
         <div class="input-box">
           <label for="email">이메일</label>
-          <input name="email" id="email" type="email" />
+          <input name="email" id="email" type="email" placeholder="이메일을 입력해주세요"/>
         </div>
 
         <div class="input-box">
           <label for="password">비밀번호</label>
           <div class="pw-content">
-            <input name="password" id="password" type="password" />
-            <img
-              class="eye_icon"
-              src="/image/password_toggle_icon.svg"
-              alt="비밀번호를 보이지 않게 하는 눈 아이콘"
-            />
+            <input name="password" id="password" type="password" placeholder="비밀번호를 입력해주세요" />
+            <button type="button" class="button-eye">
+              <img
+                class="eye_icon"
+                src="/image/password_toggle_icon.svg"
+                alt="비밀번호를 보이지 않게 하는 눈 아이콘"
+              />
+            </button>
           </div>
         </div>
 
-        <button>로그인</button>
+        <button type="submit" class="button-submit">로그인</button>
       </form>
     </main>
 
@@ -56,12 +57,18 @@
         <span>간편 로그인하기</span>
 
         <div class="social-media">
-          <a href="http://www.google.com/" target="_blank">
-            <img src="/image/google.png" alt="구글 로고" width="42" />
-          </a>
-          <a href="http://www.kakaocorp.com/page/" target="_blank">
-            <img src="/image/kakao.png" alt="카카오톡 로고" width="42" />
-          </a>
+          <ul>
+            <li>
+              <a href="http://www.google.com/" target="_blank">
+                <img src="/image/google.png" alt="구글 로고" width="42" />
+              </a>
+            </li>
+            <li>
+              <a href="http://www.kakaocorp.com/page/" target="_blank">
+                <img src="/image/kakao.png" alt="카카오톡 로고" width="42" />
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
