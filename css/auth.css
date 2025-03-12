@@ -157,11 +157,15 @@ footer{
 }
 
 @media (max-width: 76.7rem) {
-  header {
+  .body-login, .body-signup {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+  .banner {
     margin: 0;
   }
 
-  header a {
+  .banner a {
     width: 19.8rem;
     height: 6.6rem;
   }
