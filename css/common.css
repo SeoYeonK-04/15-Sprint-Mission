@@ -30,4 +30,5 @@ ul {
 
 button {
   cursor: pointer;
+  background-color: transparent;
 }
