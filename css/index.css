@@ -352,6 +352,10 @@ footer {
   height: 52rem;
  }
 
+ .content-title span {
+  display: inline;
+ }
+
   /* Main-Footer */
  .content-footer {
   height: 92.7rem;
@@ -360,6 +364,10 @@ footer {
  .content-footer-content {
   flex-direction: column;
   gap: 10rem;
+ }
+
+ .content-footer-text {
+  text-align: center;
  }
 
  /* Footer */
@@ -410,9 +418,13 @@ footer {
     left: 0px;
     top: 50px;
   }
+
+  .footer-privacy {
+    width: 130px;
+  }
   
   .sns-link img {
-    width: 20px;
+    width: 10px;
   }
  }
 }
