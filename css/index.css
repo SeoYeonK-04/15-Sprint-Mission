@@ -4,19 +4,22 @@ body {
 
 /* Banner */
 .banner {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  padding: 0 40rem;
   position: sticky;
   top: 0;
   background-color: var(--white);
 }
 
 .banner-content {
+  max-width: 120rem;
+  width: 100%;
   height: 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 0.95rem 40rem;
 }
 
 .logo-content {
@@ -275,10 +278,21 @@ footer {
     cursor: pointer;
 }
 
+@media (max-width: 1920px) {
+  .banner {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
 @media (max-width: 1199px) {
   /* Banner */
+  .banner {
+    padding: 0;
+  }
+
   .banner-content {
-    padding: 0.95rem 2.4rem;
+    max-width: 69.6rem;
   }  
 
   /* Main - Header */
@@ -368,6 +382,10 @@ footer {
     font-size: 5px;
   }
 
+  .banner {
+    padding-right: 16px;
+  }
+
   .logo {
     display: none;
   }
@@ -396,6 +414,5 @@ footer {
   .sns-link img {
     width: 20px;
   }
-
  }
 }
