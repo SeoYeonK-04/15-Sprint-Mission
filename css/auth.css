@@ -156,11 +156,7 @@ footer{
   color: var(--blue);
 }
 
-@media (max-width: 76.7rem) {
-  .body-login, .body-signup {
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-  }
+@media (max-width: 767px) {
   .banner {
     margin: 0;
   }
