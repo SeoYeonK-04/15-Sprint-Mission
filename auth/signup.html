@@ -4,19 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입</title>
+
+    <!-- favicon 불러오기 -->
     <link rel="icon" type="image/svg" href="/image/logo.svg" />
+
+    <!-- Pretendard 폰트 불러오기 -->
     <link
       rel="stylesheet"
       as="style"
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
+
+    <!-- normalize css 불러오기 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/auth.css" />
+
+    <!-- css 불러오기 -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/auth/auth.css" />
   </head>
 
   <body class="body-signup">
@@ -31,18 +40,33 @@
       <form class="auth-form">
         <div class="input-box">
           <label for="email">이메일</label>
-          <input name="email" id="email" type="email" placeholder="이메일을 입력해 주세요" />
+          <input
+            name="email"
+            id="email"
+            type="email"
+            placeholder="이메일을 입력해 주세요"
+          />
         </div>
 
         <div class="input-box">
           <label for="nickname">닉네임</label>
-          <input name="nickname" id="nickname" type="text" placeholder="닉네임을 입력해주세요" />
+          <input
+            name="nickname"
+            id="nickname"
+            type="text"
+            placeholder="닉네임을 입력해주세요"
+          />
         </div>
 
         <div class="input-box">
           <label for="password">비밀번호</label>
           <div class="pw-content">
-            <input name="password" id="password" type="password" placeholder="비밀번호를 입력해 주세요"/>
+            <input
+              name="password"
+              id="password"
+              type="password"
+              placeholder="비밀번호를 입력해 주세요"
+            />
             <button type="button" class="button-eye">
               <img
                 class="eye_icon"
@@ -56,7 +80,12 @@
         <div class="input-box">
           <label for="password-confirm">비밀번호 확인</label>
           <div class="pw-content">
-            <input name="password-confirm" id="password-confirm" type="text" placeholder="비밀번호를 다시 한 번 입력해주세요" />
+            <input
+              name="password-confirm"
+              id="password-confirm"
+              type="text"
+              placeholder="비밀번호를 다시 한 번 입력해주세요"
+            />
             <button type="button" class="button-eye">
               <img
                 class="eye_icon"
@@ -92,7 +121,7 @@
 
       <section class="sign_up">
         <span>이미 회원이신가요?</span>
-        <a href="/html/login.html">로그인</a>
+        <a href="/auth/login.html">로그인</a>
       </section>
     </footer>
   </body>
