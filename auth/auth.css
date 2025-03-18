@@ -61,7 +61,11 @@ label {
   font-weight: 700;
 }
 
-input{ 
+.error {
+  border: 2px solid var(--error);
+}
+
+input { 
   width: 64rem;
   height: 5.6rem;
 
@@ -73,6 +77,35 @@ input{
   font-weight: 40rem;
 
   padding: 1.6rem 2.4rem;
+}
+
+.email-error, .pw-error, .pwconfirm-error, .nickname-error {
+  display: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--error);
+
+  margin-left: 1.6rem;
+}
+
+.input-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.pw-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.button-eye {
+  position: absolute;
+  right: 1.6rem;
+  border: none;
 }
 
 .button-submit {
@@ -89,7 +122,7 @@ input{
   border-radius: 4rem;
 }
 
-footer{
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,24 +131,7 @@ footer{
   padding-bottom: 10rem;
 }
 
-.input-box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
 
-.pw-content {
-  position:relative;
-  display: flex;
-  align-items: center;
-}
-
-.button-eye {
-  position: absolute;
-  right: 1.6rem;
-  border: none;
-}
 
 .social-login {
   display: flex;
