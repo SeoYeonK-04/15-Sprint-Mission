@@ -12,6 +12,7 @@ const isPwVisibility = () => {
   }
 }
 
+
 eyeImage.addEventListener("click", isPwVisibility);
 
 // 비밀번호 확인 눈
