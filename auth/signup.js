@@ -55,10 +55,10 @@ const isValidPasswordConfrim = () => {
   const diffPassword = (passwordConfirmValue === passwordValue);
 
   if (!diffPassword) {
-    showError(inputPasswordConfirm, pwConfirmError, "비밀번호가 일치하지 않습니다.")
+    showError(inputPasswordConfirm, pwConfirmError, "비밀번호가 일치하지 않습니다.");
     return false;
   } else {
-    hiddenError(inputPasswordConfirm, pwError);
+    hiddenError(inputPasswordConfirm, pwConfirmError);
     return true;
   }
 }
@@ -67,10 +67,18 @@ const isValidPasswordConfrim = () => {
 const validateButton = () => {
   if (isValidEmail() && isValidPassword() && isValidNickName() && isValidPasswordConfrim()) {
     button.disabled = false;
+    button.style.cursor = "pointer";
   } else {
     button.disabled = true;
   }
 }
+
+// 회원가입 버튼 활성화시 login페이지로 이동
+button.onclick = () => {
+  if (!button.disabled) {
+    location.href = "/auth/login.html";  // 로그인 페이지로 이동
+  }
+};
 
 // 이벤트 리스너 추가
 inputEmail.addEventListener("input", validateButton);

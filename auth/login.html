@@ -25,6 +25,11 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/auth/auth.css" />
+
+    <!-- script 불러오기 -->
+    <script defer type="module" src="/auth/common.js"></script>
+    <script defer type="module" src="/auth/login.js"></script>
+    <script defer type="module" src="/auth/passwordVisibility.js"></script>
   </head>
 
   <body class="body-login">
@@ -52,6 +57,7 @@
           <label for="password">비밀번호</label>
           <div class="pw-content">
             <input
+              class="pw-visibility"
               name="password"
               id="password"
               type="password"
@@ -97,7 +103,5 @@
         <a href="/auth/signup.html">회원가입</a>
       </section>
     </footer>
-    <script type="module" src="/auth/common.js"></script>
-    <script type="module" src="/auth/login.js"></script>
   </body>
 </html>

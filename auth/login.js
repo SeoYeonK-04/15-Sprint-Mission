@@ -39,6 +39,7 @@ const isValidPassword = () => {
 const validateButton = () => {
   if (isValidEmail() && isValidPassword()) {
     button.disabled = false;
+    button.style.cursor = "pointer";
   } else {
     button.disabled = true;
   }

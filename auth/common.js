@@ -7,6 +7,7 @@ const inputPasswordConfirm = document.querySelector("#password-confirm");
 
 // 초기 버튼 비활성화
 button.disabled = true;
+button.style.cursor = "not-allowed";
 
 // input 타입별 error메세지 변수
 // const errorMessage = document.querySelector(".error-message");
