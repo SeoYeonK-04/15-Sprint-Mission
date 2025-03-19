@@ -74,9 +74,11 @@ const validateButton = () => {
 }
 
 // 회원가입 버튼 활성화시 login페이지로 이동
-button.onclick = () => {
-  if (!button.disabled) {
-    location.href = "/auth/login.html";  // 로그인 페이지로 이동
+const signupButton = document.querySelector("#button-signup");
+
+signupButton.onclick = () => {
+  if (!signupButton.disabled) {
+    location.href = "/html/items.html";  // 로그인 페이지로 이동
   }
 };
 

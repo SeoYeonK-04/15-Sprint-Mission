@@ -45,6 +45,15 @@ const validateButton = () => {
   }
 }
 
+// 로그인 버튼 활성화시 item 페이지로 이동
+const loginButton = document.querySelector("#button-login");
+
+loginButton.onclick = () => {
+  if (!loginButton.disabled) {
+    location.href = "/html/items.html";  // 로그인 페이지로 이동
+  }
+};
+
 // 이벤트 리스너 추가
 inputEmail.addEventListener("input", validateButton);
 inputPassword.addEventListener("input", validateButton);
