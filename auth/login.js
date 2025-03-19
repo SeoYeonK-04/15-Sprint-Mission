@@ -49,8 +49,8 @@ const validateButton = () => {
 const loginButton = document.querySelector("#button-login");
 
 loginButton.onclick = () => {
-  if (!loginButton.disabled) {
-    location.href = "/html/items.html";  // 로그인 페이지로 이동
+  if (!button.disabled) {
+    location.href = "/html/items.html";  // items 페이지로 이동
   }
 };
 

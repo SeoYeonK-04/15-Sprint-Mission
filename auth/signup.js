@@ -77,8 +77,8 @@ const validateButton = () => {
 const signupButton = document.querySelector("#button-signup");
 
 signupButton.onclick = () => {
-  if (!signupButton.disabled) {
-    location.href = "/html/items.html";  // 로그인 페이지로 이동
+  if (!button.disabled) {
+    location.href = "/html/login.html";  // 로그인 페이지로 이동
   }
 };
 
