@@ -4,7 +4,7 @@ import ContentSection from "../components/Home/ContentSection";
 import MainFooter from "../components/Home/MainFooter";
 import Footer from "../components/Home/Footer";
 
-import "../styles/Home.css";
+import "../styles/home.css";
 
 function Home() {
   return (
