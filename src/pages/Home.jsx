@@ -19,7 +19,7 @@ function Home() {
         <MainFooter />
       </main>
 
-      <footer>
+      <footer className="home-footer">
         <Footer />
       </footer>
     </>

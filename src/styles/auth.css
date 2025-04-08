@@ -1,4 +1,4 @@
-html {
+.body-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@ html {
   overflow: auto;
 }
 
-.banner {
+.auth-banner {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,7 @@ html {
   margin: 0 12.2rem 4rem 12.2rem;
 }
 
-.banner a {
+.auth-banner-link {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -133,7 +133,7 @@ input {
   background-color: var(--gray400);
 }
 
-footer {
+.auth-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,21 +176,21 @@ footer {
 }
 
 @media (max-width: 767px) {
-  .banner {
+  .auth-banner {
     margin: 0;
   }
 
-  .banner a {
+  .auth-banner a {
     width: 19.8rem;
     height: 6.6rem;
   }
 
-  .logo {
+  .auth-logo {
     width: 5.1rem;
     height: 5.1rem;
   }
 
-  .logo-title {
+  .auth-logo-title {
     width: 13.3rem;
     height: 4.5rem;
   }
@@ -204,8 +204,8 @@ footer {
     width: 100%;
   }
 
-  main,
-  footer {
+  .auth-main,
+  .auth-footer {
     margin-left: 1.6rem;
     margin-right: 1.6rem;
   }
