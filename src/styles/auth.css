@@ -1,0 +1,212 @@
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.body-login {
+  margin-top: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+
+  width: 64rem;
+  height: 61.8rem;
+}
+
+.body-signup {
+  margin-top: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+
+  width: 64rem;
+  height: 100%;
+
+  overflow: auto;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  width: 39.6rem;
+  height: 13.2rem;
+
+  margin: 0 12.2rem 4rem 12.2rem;
+}
+
+.banner a {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 39.6rem;
+  height: 13.2rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+label {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.error {
+  border: 2px solid var(--error);
+}
+
+input {
+  width: 64rem;
+  height: 5.6rem;
+
+  background-color: var(--gray100);
+  border: 2px solid var(--gray100);
+  border-radius: 1.2rem;
+
+  font-size: 1.6rem;
+  font-weight: 40rem;
+
+  padding: 1.6rem 2.4rem;
+}
+
+.email-error,
+.pw-error,
+.pwconfirm-error,
+.nickname-error {
+  display: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--error);
+
+  margin-left: 1.6rem;
+}
+
+.input-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.pw-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.button-eye {
+  position: absolute;
+  right: 1.6rem;
+  border: none;
+
+  cursor: pointer;
+}
+
+.button-submit {
+  width: 64rem;
+  height: 5.6rem;
+
+  background-color: var(--blue);
+  color: var(--white);
+
+  font-size: 2rem;
+  font-weight: 60rem;
+
+  border: none;
+  border-radius: 4rem;
+
+  cursor: pointer;
+}
+
+.button-submit:disabled {
+  background-color: var(--gray400);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+
+  padding-bottom: 10rem;
+}
+
+.social-login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 2.3rem;
+
+  background-color: var(--skyblue);
+
+  width: 64rem;
+  height: 7.4rem;
+
+  border-radius: 0.8rem;
+}
+
+.social-login span {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.social-media ul {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.sign_up {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.sign_up a {
+  color: var(--blue);
+}
+
+@media (max-width: 767px) {
+  .banner {
+    margin: 0;
+  }
+
+  .banner a {
+    width: 19.8rem;
+    height: 6.6rem;
+  }
+
+  .logo {
+    width: 5.1rem;
+    height: 5.1rem;
+  }
+
+  .logo-title {
+    width: 13.3rem;
+    height: 4.5rem;
+  }
+
+  .body-login,
+  .body-signup,
+  input,
+  .button-submit,
+  .social-login {
+    max-width: 40rem;
+    width: 100%;
+  }
+
+  main,
+  footer {
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
+}

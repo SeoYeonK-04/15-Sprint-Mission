@@ -9,7 +9,7 @@ import "../styles/Home.css";
 function Home() {
   return (
     <>
-      <header>
+      <header className="banner">
         <Banner />
       </header>
 
