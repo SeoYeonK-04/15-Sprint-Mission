@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import Item from "./pages/Item";
 import Privacy from "./pages/Privacy";
 import FAQ from "./pages/FAQ";
+import Community from "./pages/Community";
 
 import "./styles/common.css";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/item" element={<Item />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/community" element={<Community />} />
       </Routes>
     </BrowserRouter>
   );
