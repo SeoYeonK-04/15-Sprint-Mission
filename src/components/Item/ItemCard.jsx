@@ -8,12 +8,18 @@ function isValidImage(url) {
   );
 }
 
+// {isValidImage(item.images[0]) ? item.images[0] : "/no_image.png"}
+
 function ItemCard({ item }) {
   return (
     <>
       <div className="item-card-container">
         <img
           src={isValidImage(item.images[0]) ? item.images[0] : "/no_image.png"}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "/no_image.png";
+          }}
           alt={item.name}
           className="item-image"
         />
