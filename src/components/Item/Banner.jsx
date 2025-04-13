@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "/logo.svg";
 import logo_title from "/logo_title.svg";
 
+import "./Banner.css";
+
 function getLinkStyle({ isActive }) {
   return {
     color: isActive ? "var(--blue)" : undefined,

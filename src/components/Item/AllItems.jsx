@@ -2,11 +2,27 @@ import { useState, useEffect } from "react";
 import { getProducts } from "../../api/itemAPI";
 
 import ItemList from "./ItemList";
+import PageNation from "./PageNation";
+
+const getPageSize = () => {
+  const width = window.innerWidth;
+  if (width < 768) {
+    // 모바일
+    return 4;
+  } else if (width < 1280) {
+    // 테블릿
+    return 6;
+  } else {
+    // 데스크톱
+    return 10;
+  }
+};
 
 function AllItem() {
   const [items, setItems] = useState([]);
   const [sort, setSort] = useState("recent");
   const [totalPage, setTotalPage] = useState();
+  const [pageSize, setPageSize] = useState(getPageSize());
 
   const handleChange = (e) => setSort(e.target.value);
 
@@ -15,16 +31,17 @@ function AllItem() {
       try {
         const data = await getProducts({
           orderBy: sort,
-          pageSize: 10,
+          pageSize: pageSize,
         });
         setItems(data.list);
+        setTotalPage(Math.ceil(data.totalCount / pageSize));
       } catch (error) {
         console.error("상품을 불러오는 중 에러 발생:", error);
       }
     };
 
     fetchItems();
-  }, [sort]);
+  }, [sort, pageSize]);
 
   return (
     <div className="all-item">
@@ -39,6 +56,7 @@ function AllItem() {
       </div>
 
       <ItemList items={items} />
+      <PageNation totalPage={totalPage} />
     </div>
   );
 }
