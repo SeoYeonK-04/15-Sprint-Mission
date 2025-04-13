@@ -40,7 +40,7 @@ function BestItem() {
   return (
     <div className="best-item-container">
       <h1 className="best-item-title">베스트 상품</h1>
-      <ItemList items={items} />
+      <ItemList items={items} className="best-item-list" />
     </div>
   );
 }

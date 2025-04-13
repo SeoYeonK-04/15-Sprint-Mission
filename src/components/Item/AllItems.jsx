@@ -55,7 +55,7 @@ function AllItem() {
         </select>
       </div>
 
-      <ItemList items={items} />
+      <ItemList items={items} className="all-item-list" />
       <PageNation totalPage={totalPage} />
     </div>
   );

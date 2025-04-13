@@ -1,8 +1,10 @@
 import ItemCard from "./ItemCard";
 
-function ItemList({ items }) {
+import "./ItemList.css";
+
+function ItemList({ items, className }) {
   return (
-    <div className="item-list">
+    <div className={className}>
       {items?.map((item) => (
         <ItemCard key={item.id} item={item} />
       ))}

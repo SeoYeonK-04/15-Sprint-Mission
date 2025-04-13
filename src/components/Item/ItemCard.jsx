@@ -1,5 +1,7 @@
 import heart_icon from "/heart_icon.svg";
 
+import "./ItemCard.css";
+
 function isValidImage(url) {
   return (
     typeof url === "string" &&
@@ -25,7 +27,7 @@ function ItemCard({ item }) {
         />
         <div className="item-card-description">
           <span className="item-name">{item.name}</span>
-          <h2 className="itme-price">{item.price}</h2>
+          <h2 className="item-price">{item.price}</h2>
           <div className="item-heart-contetnt">
             <img
               src={heart_icon}
