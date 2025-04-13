@@ -27,6 +27,7 @@ html {
 
 button {
   background-color: transparent;
+  border: none;
 }
 
 ul {

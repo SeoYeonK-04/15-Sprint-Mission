@@ -9,6 +9,7 @@ import FAQ from "./pages/FAQ";
 import Community from "./pages/Community";
 
 import "./styles/common.css";
+import AddItem from "./pages/AddItem";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/additem" element={<AddItem />} />
       </Routes>
     </BrowserRouter>
   );

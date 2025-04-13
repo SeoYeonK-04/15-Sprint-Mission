@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { getProducts } from "../../api/itemAPI";
+import { Link } from "react-router-dom";
 
 import ItemList from "./ItemList";
 import PageNation from "./PageNation";
+
+import "./AllItem.css";
 
 const getPageSize = () => {
   const width = window.innerWidth;
@@ -47,12 +50,24 @@ function AllItem() {
     <div className="all-item">
       <div className="all-item-header">
         <h1>전체 상품</h1>
-        <input placeholder="검색할 상품을 입력해주세요" />
-        <button>상품 등록하기</button>
-        <select value={sort} onChange={handleChange}>
-          <option value="recent">최신순</option>
-          <option value="favorite">좋아요순</option>
-        </select>
+
+        <div className="all-item-header-right">
+          <input
+            className="item-search"
+            placeholder="검색할 상품을 입력해주세요"
+          />
+          <Link to="/additem" className="item-add-item">
+            상품 등록하기
+          </Link>
+          <select
+            className="all-item-sort"
+            value={sort}
+            onChange={handleChange}
+          >
+            <option value="recent">최신순</option>
+            <option value="favorite">좋아요순</option>
+          </select>
+        </div>
       </div>
 
       <ItemList items={items} className="all-item-list" />
