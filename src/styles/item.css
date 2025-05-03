@@ -6,3 +6,10 @@
   flex-direction: column;
   gap: 4rem;
 }
+
+@media (max-width: 1279px) {
+  .item-main {
+    margin-right: 2.4rem;
+    margin-left: 2.4rem;
+  }
+}
