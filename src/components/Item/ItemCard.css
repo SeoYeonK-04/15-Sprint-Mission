@@ -52,8 +52,18 @@
   font-weight: 500;
 }
 
-@media (max-width: 1279px) {
-  .item-image {
-    height: 35rem;
+@media (max-width: 768px) {
+  .best-item-list.item-image {
+    height: 34.8rem;
+  }
+
+  .all-item-list.item-image {
+    height: 22.4rem;
+  }
+}
+
+@media (max-width: 426px) {
+  .all-item-list.item-image {
+    height: 17.6rem;
   }
 }
