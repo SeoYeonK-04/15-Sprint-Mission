@@ -6,10 +6,10 @@ import { getProducts } from "../../api/itemAPI";
 
 const getPageSize = () => {
   const width = window.innerWidth;
-  if (width < 768) {
+  if (width <= 425) {
     // 모바일
     return 1;
-  } else if (width < 1280) {
+  } else if (width <= 768) {
     // 테블릿
     return 2;
   } else {
