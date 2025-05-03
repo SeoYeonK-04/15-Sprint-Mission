@@ -1,7 +1,16 @@
+import "./PageNation.css";
+
 function PageNation({ totalPage, page, setPage }) {
   const visiblePages = 5;
-  const startPage = Math.max(1, page - Math.floor(visiblePages / 2));
-  const endPage = Math.min(totalPage, startPage + visiblePages - 1);
+  const currentBlock = Math.floor((page - 1) / visiblePages);
+  const startPage = currentBlock * visiblePages + 1;
+  const endPage = Math.min(startPage + visiblePages - 1, totalPage);
+
+  // 마지막 페이지가 totalPage를 넘지 않도록 조정
+  if (endPage > totalPage) {
+    endPage = totalPage;
+    startPage = Math.max(1, endPage - visiblePages + 1);
+  }
 
   const pageArray = [];
   for (let i = startPage; i <= endPage; i++) {
@@ -16,7 +25,7 @@ function PageNation({ totalPage, page, setPage }) {
     <div className="pagination">
       <button
         onClick={() => page > 1 && setPage(page - 1)}
-        className="page-arrow"
+        className="page-button"
         disabled={page === 1}
       >
         &lt;
@@ -34,7 +43,7 @@ function PageNation({ totalPage, page, setPage }) {
 
       <button
         onClick={() => page < totalPage && setPage(page + 1)}
-        className="page-arrow"
+        className="page-button"
         disabled={page === totalPage}
       >
         &gt;
