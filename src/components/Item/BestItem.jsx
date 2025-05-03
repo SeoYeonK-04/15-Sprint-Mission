@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import debounce from "lodash/debounce";
 
 import ItemList from "./ItemList";
 import { getProducts } from "../../api/itemAPI";
@@ -21,6 +22,24 @@ function BestItem() {
   const [items, setItems] = useState([]);
   const [pageSize, setPageSize] = useState(getPageSize());
 
+  const handleResize = useCallback(() => {
+    const newSize = getPageSize();
+    setPageSize((prevSize) => (prevSize !== newSize ? newSize : prevSize));
+  }, []);
+
+  const debouncedResize = useCallback(debounce(handleResize, 300), [
+    handleResize,
+  ]);
+
+  useEffect(() => {
+    window.addEventListener("resize", debouncedResize);
+
+    return () => {
+      window.removeEventListener("resize", debouncedResize);
+      debouncedResize.cancel(); // 꼭 필요!
+    };
+  }, [debouncedResize]);
+
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -35,7 +54,7 @@ function BestItem() {
     };
 
     fetchItems();
-  }, []);
+  }, [pageSize]);
 
   return (
     <div className="best-item-container">
