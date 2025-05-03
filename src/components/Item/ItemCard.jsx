@@ -10,9 +10,7 @@ function isValidImage(url) {
   );
 }
 
-// {isValidImage(item.images[0]) ? item.images[0] : "/no_image.png"}
-
-function ItemCard({ item }) {
+function ItemCard({ item, className }) {
   return (
     <>
       <div className="item-card-container">
@@ -23,12 +21,12 @@ function ItemCard({ item }) {
             e.target.src = "/no_image.png";
           }}
           alt={item.name}
-          className="item-image"
+          className={`${className} item-image`}
         />
         <div className="item-card-description">
           <span className="item-name">{item.name}</span>
           <h2 className="item-price">{item.price}</h2>
-          <div className="item-heart-contetnt">
+          <div className="item-heart-content">
             <img
               src={heart_icon}
               alt="좋아요 누르는 하트 버튼"
