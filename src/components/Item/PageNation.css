@@ -1,0 +1,27 @@
+.pagination {
+  margin-top: 43px;
+  margin-bottom: 58px;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+
+.page-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+
+  color: var(--gray500);
+}
+
+.page-button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.page-button.active {
+  background-color: var(--blue);
+  color: var(--white);
+}
