@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import debounce from "lodash/debounce";
+
 import { getProducts } from "../../api/itemAPI";
 import { Link } from "react-router-dom";
 
@@ -26,8 +28,27 @@ function AllItem() {
   const [sort, setSort] = useState("recent");
   const [totalPage, setTotalPage] = useState();
   const [pageSize, setPageSize] = useState(getPageSize());
+  const [page, setPage] = useState(1);
 
   const handleChange = (e) => setSort(e.target.value);
+
+  const handleResize = useCallback(() => {
+    const newSize = getPageSize();
+    setPageSize((prevSize) => (prevSize !== newSize ? newSize : prevSize));
+  }, []);
+
+  const debouncedResize = useCallback(debounce(handleResize, 300), [
+    handleResize,
+  ]);
+
+  useEffect(() => {
+    window.addEventListener("resize", debouncedResize);
+
+    return () => {
+      window.removeEventListener("resize", debouncedResize);
+      debouncedResize.cancel(); // 꼭 필요!
+    };
+  }, [debouncedResize]);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -35,6 +56,7 @@ function AllItem() {
         const data = await getProducts({
           orderBy: sort,
           pageSize: pageSize,
+          page: page,
         });
         setItems(data.list);
         setTotalPage(Math.ceil(data.totalCount / pageSize));
@@ -44,7 +66,7 @@ function AllItem() {
     };
 
     fetchItems();
-  }, [sort, pageSize]);
+  }, [sort, pageSize, page]);
 
   return (
     <div className="all-item">
@@ -71,7 +93,7 @@ function AllItem() {
       </div>
 
       <ItemList items={items} className="all-item-list" />
-      <PageNation totalPage={totalPage} />
+      <PageNation totalPage={totalPage} page={page} setPage={setPage} />
     </div>
   );
 }
