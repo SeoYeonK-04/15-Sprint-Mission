@@ -4,7 +4,7 @@ function PageNation({ totalPage, page, setPage }) {
   const visiblePages = 5;
   const currentBlock = Math.floor((page - 1) / visiblePages);
   const startPage = currentBlock * visiblePages + 1;
-  const endPage = Math.min(startPage + visiblePages - 1, totalPage);
+  let endPage = Math.min(startPage + visiblePages - 1, totalPage);
 
   // 마지막 페이지가 totalPage를 넘지 않도록 조정
   if (endPage > totalPage) {
