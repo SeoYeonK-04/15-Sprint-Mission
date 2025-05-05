@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+
+  cursor: pointer;
 }
 
 .best-item-list.item-image {
