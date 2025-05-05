@@ -74,4 +74,8 @@
   .dropdown-mobile-icon {
     display: inline;
   }
+
+  .dropdown-menu {
+    left: -200%;
+  }
 }
