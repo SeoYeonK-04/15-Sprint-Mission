@@ -8,6 +8,7 @@ import ItemList from "./ItemList";
 import PageNation from "./PageNation";
 
 import "./AllItem.css";
+import Dropdown from "./component/Dropdown";
 
 const getPageSize = () => {
   const width = window.innerWidth;
@@ -30,8 +31,6 @@ function AllItem() {
   const [pageSize, setPageSize] = useState(getPageSize());
   const [page, setPage] = useState(1);
 
-  const handleChange = (e) => setSort(e.target.value);
-
   const handleResize = useCallback(() => {
     const newSize = getPageSize();
     setPageSize((prevSize) => (prevSize !== newSize ? newSize : prevSize));
@@ -46,7 +45,7 @@ function AllItem() {
 
     return () => {
       window.removeEventListener("resize", debouncedResize);
-      debouncedResize.cancel(); // 꼭 필요!
+      debouncedResize.cancel();
     };
   }, [debouncedResize]);
 
@@ -71,7 +70,7 @@ function AllItem() {
   return (
     <div className="all-item">
       <div className="all-item-header">
-        <h1>전체 상품</h1>
+        <h1 className="all-item-title">전체 상품</h1>
 
         <div className="all-item-header-right">
           <input
@@ -81,14 +80,7 @@ function AllItem() {
           <Link to="/additem" className="item-add-item">
             상품 등록하기
           </Link>
-          <select
-            className="all-item-sort"
-            value={sort}
-            onChange={handleChange}
-          >
-            <option value="recent">최신순</option>
-            <option value="favorite">좋아요순</option>
-          </select>
+          <Dropdown sort={sort} setSort={setSort} className="dropdown" />
         </div>
       </div>
 
