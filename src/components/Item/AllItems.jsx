@@ -8,7 +8,7 @@ import ItemList from "./ItemList";
 import PageNation from "./PageNation";
 
 import "./AllItem.css";
-import DropDown from "./component/DropDown.jsx";
+import Dropdown from "./component/Dropdown.jsx";
 
 const getPageSize = () => {
   const width = window.innerWidth;
