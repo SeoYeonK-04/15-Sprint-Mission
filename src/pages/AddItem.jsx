@@ -1,5 +1,7 @@
+import Banner from "../components/Item/Banner";
+
 function AddItem() {
-  return <h1>상품 등록 페이지</h1>;
+  return <Banner />;
 }
 
 export default AddItem;
