@@ -4,8 +4,8 @@ import debounce from "lodash/debounce";
 import { getProducts } from "../../api/itemAPI";
 import { Link } from "react-router-dom";
 
-import ItemList from "./ItemList";
-import PageNation from "./PageNation";
+import ItemList from "./component/ItemList";
+import PageNation from "./component/PageNation";
 
 import "./AllItem.css";
 import Dropdown from "./component/Dropdown.jsx";
