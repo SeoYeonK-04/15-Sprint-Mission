@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "/logo.svg";
 import logo_title from "/logo_title.svg";
 
-import "./Banner.css";
+import "./Header.css";
 
 function getLinkStyle({ isActive }) {
   return {
@@ -11,7 +11,7 @@ function getLinkStyle({ isActive }) {
   };
 }
 
-function Banner() {
+function Header() {
   return (
     <header className="item-banner">
       <div className="item-banner-content">
@@ -48,4 +48,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default Header;

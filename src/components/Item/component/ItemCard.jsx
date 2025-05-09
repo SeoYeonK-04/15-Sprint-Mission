@@ -25,7 +25,7 @@ function ItemCard({ item, className }) {
         />
         <div className="item-card-description">
           <span className="item-name">{item.name}</span>
-          <h2 className="item-price">{item.price}</h2>
+          <h2 className="item-price">{item.price.toLocaleString()}</h2>
           <div className="item-heart-content">
             <img
               src={heart_icon}
