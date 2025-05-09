@@ -1,7 +1,15 @@
+import AddItemContent from "../components/AddItem/AddItem";
 import Banner from "../components/Item/Banner";
 
 function AddItem() {
-  return <Banner />;
+  return (
+    <>
+      <header>
+        <Banner />
+      </header>
+      <AddItemContent />
+    </>
+  );
 }
 
 export default AddItem;
