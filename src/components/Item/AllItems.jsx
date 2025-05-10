@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import debounce from "lodash/debounce";
 
 import { getProducts } from "../../api/itemAPI";
 import { Link } from "react-router-dom";
@@ -36,18 +35,12 @@ function AllItem() {
     setPageSize((prevSize) => (prevSize !== newSize ? newSize : prevSize));
   }, []);
 
-  const debouncedResize = useCallback(debounce(handleResize, 300), [
-    handleResize,
-  ]);
-
   useEffect(() => {
-    window.addEventListener("resize", debouncedResize);
-
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("resize", debouncedResize);
-      debouncedResize.cancel();
+      window.removeEventListener("resize", handleResize);
     };
-  }, [debouncedResize]);
+  }, []);
 
   useEffect(() => {
     const fetchItems = async () => {
