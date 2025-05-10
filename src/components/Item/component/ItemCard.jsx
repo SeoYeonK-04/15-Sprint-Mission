@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heart_icon from "/heart_icon.svg";
 
 import "./ItemCard.css";
@@ -12,7 +13,7 @@ function isValidImage(url) {
 
 function ItemCard({ item, className }) {
   return (
-    <>
+    <Link to={`/items/${item.id}`} className="item-card-link">
       <div className="item-card-container">
         <img
           src={isValidImage(item.images[0]) ? item.images[0] : "/no_image.png"}
@@ -36,7 +37,7 @@ function ItemCard({ item, className }) {
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 }
 

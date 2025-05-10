@@ -1,11 +1,17 @@
 import { Route } from "react-router-dom";
 import Item from "../pages/Item.jsx";
 import AddItem from "../pages/AddItem.jsx";
+import ItemDetail from "../pages/ItemDetail.jsx";
 
-const itemRoutes = (
+const itemRoutes = [
   <Route path="/item" element={<Item />} key="item">
     <Route path="additem" element={<AddItem />} />
-  </Route>
-);
+  </Route>,
+  <Route
+    path="/items/:productId"
+    element={<ProductDetail />}
+    key="product-detail"
+  />,
+];
 
 export default itemRoutes;
