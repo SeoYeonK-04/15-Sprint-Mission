@@ -4,9 +4,6 @@ import Header from "../components/Item/Header";
 function AddItem() {
   return (
     <>
-      <header>
-        <Header />
-      </header>
       <AddItemContent />
     </>
   );

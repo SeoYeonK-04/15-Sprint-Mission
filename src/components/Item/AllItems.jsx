@@ -70,7 +70,7 @@ function AllItem() {
             className="item-search"
             placeholder="검색할 상품을 입력해주세요"
           />
-          <Link to="/item/additem" className="item-add-item">
+          <Link to="additem" className="item-add-item">
             상품 등록하기
           </Link>
           <Dropdown sort={sort} setSort={setSort} className="dropdown" />
