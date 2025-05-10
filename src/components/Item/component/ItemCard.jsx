@@ -15,6 +15,7 @@ function ItemCard({ item, className }) {
   return (
     <Link to={`/items/${item.id}`} className="item-card-link">
       <div className="item-card-container">
+        <Link to={`/items/${item.id}`} className="item-card-link"></Link>
         <img
           src={isValidImage(item.images[0]) ? item.images[0] : "/no_image.png"}
           onError={(e) => {
@@ -24,17 +25,18 @@ function ItemCard({ item, className }) {
           alt={item.name}
           className={`${className} item-image`}
         />
+
         <div className="item-card-description">
           <span className="item-name">{item.name}</span>
           <h2 className="item-price">{item.price.toLocaleString()}</h2>
-          <div className="item-heart-content">
+          <button className="item-heart-content" type="button">
             <img
               src={heart_icon}
               alt="좋아요 누르는 하트 버튼"
               className="item-heart-icon"
             />
             <span className="item-heart-count">{item.favoriteCount}</span>
-          </div>
+          </button>
         </div>
       </div>
     </Link>
