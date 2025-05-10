@@ -9,7 +9,7 @@ const itemRoutes = [
   </Route>,
   <Route
     path="/items/:productId"
-    element={<ProductDetail />}
+    element={<ItemDetail />}
     key="product-detail"
   />,
 ];
