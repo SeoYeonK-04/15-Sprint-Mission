@@ -15,7 +15,6 @@ function ItemCard({ item, className }) {
   return (
     <Link to={`/item/${item.id}`} className="item-card-link">
       <div className="item-card-container">
-        <Link to={`/items/${item.id}`} className="item-card-link"></Link>
         <img
           src={isValidImage(item.images[0]) ? item.images[0] : "/no_image.png"}
           onError={(e) => {
