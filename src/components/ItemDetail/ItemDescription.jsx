@@ -3,7 +3,15 @@ import styles from "./styles/ItemDescription.module.css";
 export default function ItemDescription({ items }) {
   return (
     <section className={styles.section1}>
-      <img className={styles.img} src={items.images[0]} alt={items.name} />
+      <img
+        className={styles.img}
+        src={items.images[0] || "/no_image.png"}
+        alt={items.name}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "/no_image.png";
+        }}
+      />
 
       <div className={styles.descriptionContainer}>
         <div className={styles.descriptionTop}>
@@ -18,8 +26,11 @@ export default function ItemDescription({ items }) {
         </div>
 
         <div className={styles.descriptionBottom}>
-          <span className={styles.introName}>상품 소개</span>
-          <p className={styles.intro}>{items.description}</p>
+          <div className={styles.descriptionTitle}>
+            <span className={styles.introName}>상품 소개</span>
+            <p className={styles.intro}>{items.description}</p>
+          </div>
+
           <div className={styles.tagContainer}>
             <span className={styles.tagTitle}>상품 태그</span>
             <div className={styles.tagContent}>

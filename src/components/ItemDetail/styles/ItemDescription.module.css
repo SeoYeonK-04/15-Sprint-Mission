@@ -65,6 +65,12 @@
   margin-bottom: 6.2rem;
 }
 
+.descriptionTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
 .introName {
   font-size: 1.6rem;
   font-weight: 600;
@@ -131,6 +137,7 @@
 .profileContent {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
 }
 
 .profileImg {
