@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import styles from "./styles/DetailContent.module.css";
 import ItemDescription from "./ItemDescription";
+import AskSection from "./AskSection";
 
 function DetailContent() {
   const { productId } = useParams();
@@ -32,6 +33,7 @@ function DetailContent() {
   return (
     <main className={styles.main}>
       <ItemDescription items={items} />
+      <AskSection />
     </main>
   );
 }
