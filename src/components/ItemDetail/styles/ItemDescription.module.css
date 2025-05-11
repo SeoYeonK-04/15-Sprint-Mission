@@ -102,6 +102,7 @@
 
 .tagContent {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.8rem;
 }
 
@@ -190,4 +191,42 @@
   font-weight: 500;
 
   color: var(--gray500);
+}
+
+@media (max-width: 7698px) {
+  .img {
+    width: 34rem;
+    height: 34rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .price {
+    font-size: 3.2rem;
+  }
+
+  .introName {
+    font-size: 1.4rem;
+  }
+
+  .intro {
+    font-size: 1.6rem;
+  }
+
+  .tagTitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 426px) {
+  .section1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .descriptionContainer {
+    width: 100%;
+  }
 }

@@ -33,13 +33,13 @@ export default function ItemDescription({ items }) {
 
           <div className={styles.tagContainer}>
             <span className={styles.tagTitle}>상품 태그</span>
-            <div className={styles.tagContent}>
+            <ul className={styles.tagContent}>
               {items.tags.map((tag, index) => (
-                <span className={styles.tag} key={index}>
+                <li className={styles.tag} key={index}>
                   # {tag}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
 
