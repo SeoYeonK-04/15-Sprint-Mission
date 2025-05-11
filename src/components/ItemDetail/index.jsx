@@ -1,6 +1,7 @@
 import getProductById from "../../api/getItemById";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./styles/DetailContent.module.css";
 import ItemDescription from "./ItemDescription";
@@ -48,6 +49,15 @@ function DetailContent() {
           comments.map((comment, index) => (
             <Review key={index} comment={comment} />
           ))}
+      </section>
+
+      <section className={styles.backBtnContainer}>
+        <Link to="/item" className={styles.backBtn} type="button">
+          <div className={styles.backBtnText}>
+            <p>목록으로 돌아가기</p>
+            <img src="/ic_back.svg" alt="뒤로가기 아이콘" />
+          </div>
+        </Link>
       </section>
     </main>
   );
