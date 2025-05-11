@@ -5,9 +5,11 @@ import "./styles/common.css";
 
 function App() {
   return (
-    <Router>
-      <Routes>{routes}</Routes>
-    </Router>
+    <ItemProvider>
+      <Router>
+        <Routes>{routes}</Routes>
+      </Router>
+    </ItemProvider>
   );
 }
 
