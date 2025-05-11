@@ -4,3 +4,10 @@
   margin: 24px auto;
   margin-bottom: 22rem;
 }
+
+.review {
+  margin-bottom: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}

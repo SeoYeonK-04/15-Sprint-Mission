@@ -1,7 +1,6 @@
 import styles from "./styles/ItemDescription.module.css";
 
 export default function ItemDescription({ items }) {
-  console.log(items);
   return (
     <section className={styles.section1}>
       <img className={styles.img} src={items.images[0]} alt={items.name} />

@@ -1,0 +1,50 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 100%;
+
+  border-bottom: 1px solid var(--gray200);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 4px;
+}
+
+.img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  color: var(--gray600);
+}
+
+.time {
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  color: var(--gray400);
+}
