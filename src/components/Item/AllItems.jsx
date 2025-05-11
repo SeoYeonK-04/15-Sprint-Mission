@@ -29,6 +29,7 @@ function AllItem() {
   const [totalPage, setTotalPage] = useState();
   const [pageSize, setPageSize] = useState(getPageSize());
   const [page, setPage] = useState(1);
+  const [keyword, setKeyword] = useState("");
 
   const handleResize = useCallback(() => {
     const newSize = getPageSize();
@@ -45,11 +46,17 @@ function AllItem() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const data = await getProducts({
+        const params = {
           orderBy: sort,
-          pageSize: pageSize,
-          page: page,
-        });
+          pageSize,
+          page,
+        };
+
+        if (keyword.trim() !== "") {
+          params.keyword = keyword;
+        }
+
+        const data = await getProducts(params);
         setItems(data.list);
         setTotalPage(Math.ceil(data.totalCount / pageSize));
       } catch (error) {
@@ -58,7 +65,12 @@ function AllItem() {
     };
 
     fetchItems();
-  }, [sort, pageSize, page]);
+  }, [sort, pageSize, page, keyword]);
+
+  const handleKeywordChange = (e) => {
+    setKeyword(e.target.value);
+    setPage(1);
+  };
 
   return (
     <div className="all-item">
@@ -69,6 +81,8 @@ function AllItem() {
           <input
             className="item-search"
             placeholder="검색할 상품을 입력해주세요"
+            value={keyword}
+            onChange={handleKeywordChange}
           />
           <Link to="additem" className="item-add-item">
             상품 등록하기
