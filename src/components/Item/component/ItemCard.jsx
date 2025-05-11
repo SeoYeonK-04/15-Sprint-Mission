@@ -13,7 +13,7 @@ function isValidImage(url) {
 
 function ItemCard({ item, className }) {
   return (
-    <Link to={`/items/${item.id}`} className="item-card-link">
+    <Link to={`/item/${item.id}`} className="item-card-link">
       <div className="item-card-container">
         <Link to={`/items/${item.id}`} className="item-card-link"></Link>
         <img

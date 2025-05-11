@@ -3,15 +3,11 @@ import Item from "../pages/Item.jsx";
 import AddItem from "../pages/AddItem.jsx";
 import ItemDetail from "../pages/ItemDetail.jsx";
 
-const itemRoutes = [
+const itemRoutes = (
   <Route path="/item" element={<Item />} key="item">
     <Route path="additem" element={<AddItem />} />
-  </Route>,
-  <Route
-    path="/items/:productId"
-    element={<ItemDetail />}
-    key="product-detail"
-  />,
-];
+    <Route path=":productId" element={<ItemDetail />} />
+  </Route>
+);
 
 export default itemRoutes;

@@ -9,7 +9,7 @@ const routes = [
   ...authRoutes,
   ...supportRoutes,
   ...communityRoutes,
-  ...itemRoutes,
+  itemRoutes,
 ];
 
 export default routes;
