@@ -5,35 +5,50 @@ import { useEffect, useState } from "react";
 import styles from "./styles/DetailContent.module.css";
 import ItemDescription from "./ItemDescription";
 import AskSection from "./AskSection";
+import getItemComment from "../../api/getItemComment";
+import Review from "./component/Review";
 
 function DetailContent() {
   const { productId } = useParams();
   const [items, setItems] = useState(null);
+  const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchItem = async () => {
+    const fetchData = async () => {
       try {
-        const data = await getProductById(productId);
-        setItems(data);
+        const [itemData, commentData] = await Promise.all([
+          getProductById(productId),
+          getItemComment({ id: productId }),
+        ]);
+        setItems(itemData);
+        setComments(commentData.list);
       } catch (error) {
-        console.error("상품 정보를 불러오는 중 에러:", error);
+        console.error("데이터 불러오기 에러:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchItem();
+    fetchData();
   }, [productId]);
 
   if (loading || !items) {
     return <p>상품 정보를 불러오는 중입니다...</p>;
   }
 
+  console.log(comments);
+
   return (
     <main className={styles.main}>
       <ItemDescription items={items} />
       <AskSection />
+      <section className={styles.review}>
+        {comments.length > 0 &&
+          comments.map((comment, index) => (
+            <Review key={index} comment={comment} />
+          ))}
+      </section>
     </main>
   );
 }
