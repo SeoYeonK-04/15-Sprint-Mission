@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+import KebabMenu from "./KebabMenu";
 import styles from "./styles/Review.module.css";
 
 export function getTimeAgo(dateString) {
@@ -23,18 +26,56 @@ export function getTimeAgo(dateString) {
 
 export default function Review({ comment }) {
   const name = comment.writer.nickname;
+  const [isEditing, setIsEditing] = useState(false);
+  const [editContent, setEditContent] = useState(comment.content);
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleCancel = () => {
+    setIsEditing(false);
+    setEditContent(comment.content);
+  };
 
   return (
     <div className={styles.review}>
       <div className={styles.top}>
-        <p className={styles.content}>{comment.content}</p>
+        {isEditing ? (
+          <textarea
+            className={styles.editInput}
+            value={editContent}
+            onChange={(e) => setEditContent(e.target.value)}
+          />
+        ) : (
+          <p className={styles.content}>{comment.content}</p>
+        )}
+        {!isEditing && <KebabMenu onEdit={handleEdit} />}
       </div>
+
       <div className={styles.user}>
-        <img className={styles.img} src="/ic_profile.svg" alt="프로필 사진" />
-        <div className={styles.userInfo}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.time}>{getTimeAgo(comment.createdAt)}</p>
+        <div className={styles.userLeft}>
+          <img className={styles.img} src="/ic_profile.svg" alt="프로필 사진" />
+          <div className={styles.userInfo}>
+            <p className={styles.name}>{name}</p>
+            <p className={styles.time}>{getTimeAgo(comment.createdAt)}</p>
+          </div>
         </div>
+
+        {isEditing && (
+          <div className={styles.editBtn}>
+            <button
+              type="button"
+              onClick={handleCancel}
+              className={styles.cancelBtn}
+            >
+              취소
+            </button>
+            <button type="submit" className={styles.submitBtn}>
+              수정 완료
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
